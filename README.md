@@ -7,7 +7,7 @@ The examples in `webpack.config.js` uses `minChunks` passing a function and, bas
 We've a few important points to pay attention:
 
 - **Chunk module "filtering":** Always use the `chunks: [<entryName>]` option, to have "control" from where you're "filtering" the path
-- **The "chunks" key is the trick:** Since we're generating entry points "at runtime", if you want to filter something based on a previous CommonsChunkPlugin, you need to use the "name" option
+- **The "chunks" key is the trick:** Since we're generating entry points "at runtime", if you want to filter something based on a previous CommonsChunkPlugin, you need to use the "name" key as your entry in the `chunks` option
 
 e.g.
 
