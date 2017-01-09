@@ -1,4 +1,4 @@
-# Webpack Commonschunkplugin Dynamic Splitting
+# Webpack CommonsChunkPlugin Dynamic Splitting
 
 This is a solid example of using CommonsChunkPlugin to dynamic split code from a "entry" key,
 
