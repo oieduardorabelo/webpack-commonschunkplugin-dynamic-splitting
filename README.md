@@ -39,7 +39,7 @@ e.g.
 
 ## Questions and Help
 
-Feel free to open a isse, and I recommend to have a look in these links before anything:
+Feel free to open a issue, and I recommend to have a look in these links before anything:
 
 - http://stackoverflow.com/questions/30329337/how-to-bundle-vendor-scripts-separately-and-require-them-as-needed-with-webpack/38733864#38733864
 - https://github.com/survivejs/ama/issues/13#issuecomment-271253953
