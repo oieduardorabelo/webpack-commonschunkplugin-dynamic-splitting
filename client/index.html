@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Webpack CommonsChunkPlugin Dynamic Splitting</title>
+</head>
+<body>
+  <h1>This is a example of how to dynamic split your code using Webpack CommonsChunkPlugin</h1>
+  <div id="RootApp"></div>
+
+  <!-- ##### ##### ##### ##### ##### -->
+  <!-- ##### ATTENTION HERE ##### -->
+  <!-- ##### ##### ##### ##### ##### -->
+
+  <!-- The order here is really important! -->
+
+  <!--
+    manifest.js contains the "webpackJsonp"
+    function used by all .js chunks
+    needs to be the first one
+  -->
+  <script src="/manifest.bundle.js"></script>
+  <!--
+    vendor.js contains all our dependencies (react, react-dom, etc)
+  -->
+  <script src="/vendor.bundle.js"></script>
+
+  <!--
+    chunks, the order here really doesn't matter, but, they should
+    be loaded before the app.js
+  -->
+  <script src="/admin.bundle.js"></script>
+  <script src="/dashboard.bundle.js"></script>
+  <script src="/settings.bundle.js"></script>
+
+  <!--
+    this is outr "entry point" in the "entry" object on the webpack config
+    since this guy uses all the previous code to bootstrap our application
+    he needs to be the last one.
+
+    since we're not lazy loading our chunks, just splitting, he needs the
+    guarantee that we've loaded all our js before
+  -->
+  <script src="/app.bundle.js"></script>
+</body>
+</html>
