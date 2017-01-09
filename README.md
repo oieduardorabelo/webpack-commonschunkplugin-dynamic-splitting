@@ -16,16 +16,23 @@ e.g.
 // on the results of the CommonsChunk [1], where CommonsChunk [1]
 // will "filter" based on the "app" entry key
 
-[1] new webpack.optimize.CommonsChunkPlugin({
-  name: 'common',
-  chunks: ['app'],
-  minChunks: ({ resource }) => /node_modules/.test(resource)
-}),
-[2] new webpack.optimize.CommonsChunkPlugin({
-  name: 'vendor',
-  chunks: ['common'],
-  minChunks: ({ resource }) => /node_modules/react.test(resource)
-}),
+// example of webpack.config.js
+...
+ plugins: [
+  ...
+  new webpack.optimize.CommonsChunkPlugin({ // [1]
+    name: 'common',
+    chunks: ['app'],
+    minChunks: ({ resource }) => /node_modules/.test(resource)
+  }),
+  new webpack.optimize.CommonsChunkPlugin({ // [2]
+    name: 'vendor',
+    chunks: ['common'],
+    minChunks: ({ resource }) => /node_modules/react.test(resource)
+  }),
+  ...
+ ]
+...
 ```
 - **The plugin order doesn't matter:** Since we're using the `chunks` key, you don't need to worry about the CommonsChunkPlugin order in your config
 - **The `<script>` load order MATTERS AND IS IMPORTANT:** Have a look in [client/index.html](https://github.com/oieduardorabelo/webpack-commonschunkplugin-dynamic-splitting/blob/master/client/index.html) and check the comments
