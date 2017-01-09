@@ -1,6 +1,6 @@
 # Webpack Commonschunkplugin Dynamic Splitting
 
-This is a solid example of using CommonsChunkPlugin to dynamic code split code from a "entry" key,
+This is a solid example of using CommonsChunkPlugin to dynamic split code from a "entry" key,
 
 The examples in `webpack.config.js` uses `minChunks` passing a function and, based on the resource/module path, split it in a separate chunk,
 
