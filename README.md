@@ -28,7 +28,7 @@ e.g.
   new webpack.optimize.CommonsChunkPlugin({ // [2]
     name: 'vendor',
     chunks: ['common'],
-    minChunks: ({ resource }) => /node_modules/react.test(resource)
+    minChunks: ({ resource }) => /node_modules\/react/.test(resource)
   }),
   ...
  ]
